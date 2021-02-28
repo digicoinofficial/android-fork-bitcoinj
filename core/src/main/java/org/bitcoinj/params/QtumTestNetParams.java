@@ -19,12 +19,12 @@ public class QtumTestNetParams extends AbstractBitcoinNetParams {
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
         maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
-        dumpedPrivateKeyHeader = 66;
-        addressHeader = 31;
-        p2shHeader = 38;
+        dumpedPrivateKeyHeader = 239;
+        addressHeader = 120;
+        p2shHeader = 110;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
-        port = 3108;
-        packetMagic = 0x1f26173f; // added FGC magic the org code has 0xf9beb4d9L not matching the other forks
+        port = 8333;
+        packetMagic = 0xf9beb4d9L;
         bip32HeaderPub = 0x0488B21E; //The 4 byte header that serializes in base58 to "xpub".
         bip32HeaderPriv = 0x0488ADE4; //The 4 byte header that serializes in base58 to "xprv"
 
@@ -32,14 +32,14 @@ public class QtumTestNetParams extends AbstractBitcoinNetParams {
         majorityRejectBlockOutdated = MAINNET_MAJORITY_REJECT_BLOCK_OUTDATED;
         majorityWindow = MAINNET_MAJORITY_WINDOW;
 
-        genesisBlock.setDifficultyTarget(0x1f00ffffL);
-        genesisBlock.setTime(1614384200L);
-        genesisBlock.setNonce(33004);
+        genesisBlock.setDifficultyTarget(0x1d00ffffL);
+        genesisBlock.setTime(1231006505L);
+        genesisBlock.setNonce(2083236893);
         id = ID_QTUM_TESTNET;
-        subsidyDecreaseBlockCount = 210000; //TODO
-        spendableCoinbaseDepth = 100; //TODO
+        subsidyDecreaseBlockCount = 210000;
+        spendableCoinbaseDepth = 100;
         String genesisHash = genesisBlock.getHashAsString();
-        checkState(genesisHash.equals("00001c8b18755416e4e9b340e5032f2d057f24d4767dd1bcfedc2ef7d2df3f03"),
+        checkState(genesisHash.equals("000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"),
                 genesisHash);
 
         // This contains (at a minimum) the blocks which are not BIP30 compliant. BIP30 changed how duplicate
