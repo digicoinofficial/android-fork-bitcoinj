@@ -18,11 +18,11 @@ public class QtumMainNetParams extends AbstractBitcoinNetParams {
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
         maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
-        dumpedPrivateKeyHeader = 128;
-        addressHeader = 58;
-        p2shHeader = 50;
+        dumpedPrivateKeyHeader = 66;
+        addressHeader = 31;
+        p2shHeader = 38;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
-        port = 8333;
+        port = 3108;
         packetMagic = 0xf9beb4d9L;
         bip32HeaderPub = 0x0488B21E; //The 4 byte header that serializes in base58 to "xpub".
         bip32HeaderPriv = 0x0488ADE4; //The 4 byte header that serializes in base58 to "xprv"
